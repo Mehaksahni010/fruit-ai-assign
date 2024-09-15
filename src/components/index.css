@@ -1,0 +1,95 @@
+/* Basic reset and styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Prevent scrollbars */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Full screen background image */
+body {
+  background-image: url('./watercolor-colorful-tropical-background_52683-126915.avif'); /* Path to your image in public folder */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Form container with blur effect */
+.form-container {
+  position: relative; /* Make sure the pseudo-element is positioned relative to this container */
+  border-radius: 12px; /* More rounded corners */
+  overflow: hidden; /* Ensure content does not overflow the rounded corners */
+  max-width: 800px; /* Maximum width of the form container */
+  width: 90%; /* Adjust width to fit within the viewport */
+  padding: 40px; /* Increased padding for more space */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Larger shadow for depth */
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+}
+
+/* Add a pseudo-element for the blurred background */
+.form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+  backdrop-filter: blur(30px); /* Blur effect */
+  -webkit-backdrop-filter: blur(30px); /* For Safari, matching blur effect */
+  z-index: -1; /* Ensure this layer is behind the content */
+  border-radius: inherit; /* Match the border radius of the container */
+}
+
+/* Additional styling to ensure form fields are not blurred */
+.form-container > * {
+  position: relative; /* Ensure form elements are on top of the pseudo-element */
+  z-index: 1; /* Make sure form elements are above the pseudo-element */
+}
+
+/* Additional styles for the form */
+h2 {
+  margin-top: 0;
+  font-size: 28px; /* Increase font size for the heading */
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 15px; /* Increase margin for labels */
+  font-weight: bold;
+  font-size: 16px; /* Increase font size for labels */
+}
+
+input {
+  width: 100%;
+  padding: 14px; /* Increase padding for input fields */
+  border: 1px solid #ccc;
+  border-radius: 8px; /* More rounded corners */
+  box-sizing: border-box;
+  margin-bottom: 20px; /* Increase margin for input fields */
+  font-size: 16px; /* Increase font size for input fields */
+}
+
+button {
+  padding: 14px; /* Increase padding for button */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px; /* More rounded corners */
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px; /* Increase font size for button */
+}
+
+button:hover {
+  background-color: #0056b3;
+}

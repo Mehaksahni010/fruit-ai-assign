@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import './chat.css'
 function Chat() {
   const [fruits, setFruits] = useState([]);
   const [selectedFruit, setSelectedFruit] = useState(null);
